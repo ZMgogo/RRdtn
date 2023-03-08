@@ -274,7 +274,7 @@ ENphylo_modeling<-function (input_data = NULL,
     qq <- input_mask
     vv <- prova[, obs_col]
     vv <- vect(vv)
-    ex <- extract(qq, vv)
+    ex <- raster::extract(qq, vv)
     qq <- rasterize(vv, qq)
     qq_RTP <- apply(crds(qq), 2, range)
     qq_RTP <- ext(qq_RTP[, 1], qq_RTP[, 2])
